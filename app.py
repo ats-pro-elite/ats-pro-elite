@@ -222,7 +222,7 @@ with st.sidebar:
     
             if st.button("🔥 Desbloquear por R$29,90"):
                 st.markdown(
-                    "[👉 Clique aqui para fazer upgrade](SEU_LINK_DE_PAGAMENTO)",
+                    "[👉 Clique aqui para fazer upgrade](https://mpago.la/28KTScf)",
                     unsafe_allow_html=True
                 )
     
