@@ -251,6 +251,15 @@ else:
             if st.session_state.resultado_analise:
                 res = st.session_state.resultado_analise
                 st.metric("Aderência ATS", f"{res['score']}%")
+                
+                # 🔍 INTERPRETAÇÃO DO SCORE
+                if res['score'] < 50:
+                    st.error("🚫 Baixa aderência: seu currículo tem alta chance de ser ignorado no filtro inicial.")
+                elif res['score'] < 75:
+                    st.warning("⚠️ Aderência moderada: seu currículo pode competir, mas ainda está abaixo do ideal.")
+                else:
+                    st.success("✅ Boa aderência: seu currículo está competitivo para a triagem inicial.")
+                
                 c1, c2, c3 = st.columns(3)
                 for col, cat in zip([c1, c2, c3], ["FERRAMENTAS", "HARD_SKILLS", "SOFT_SKILLS"]):
                     with col:
